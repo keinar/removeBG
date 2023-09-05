@@ -11,7 +11,7 @@ body{
     width: 800px;
     height: 600px;
     margin: 0 auto;
-    margin-top: 110px;
+    margin-top: 70px;
     border-radius: 20px;
     box-shadow: 1px 1px 10px black;
     background-color: #222A34;
@@ -37,7 +37,7 @@ body{
     width: 120px;
     background-repeat: no-repeat;
     background-position: 5px 6px;
-    background-size: 15px 15px;
+    background-size: 15px 12px;
 }
 
 .bg_div_header_subtext{
@@ -93,7 +93,8 @@ body{
 
 .logo{
     float: left;
-    margin: 22px;
+    margin: 15px 20px;
+    width: 40px;
 }
 
 .banner{
@@ -108,19 +109,21 @@ body{
     position: relative;
     top: -25px;
     top: -30px;
+    right: 5px;
     background-repeat: no-repeat;
 }
 
 .tab_button_no_bg{
-    background-image: url('../assets/Cleanup\ Edges.png');
+    background-image: url('../assets/Image.svg');
     background-position: 62px 4px;
-    border-bottom: 3px solid #9C27B0;
     padding-bottom: 8px;
+    background-size: 15px;
 }
 
 .tab_button_original{
-    background-image: url('../assets/Image.png');
+    background-image: url('../assets/imageOriginal.svg');
     background-position: 55px 4px;
+    background-size: 15px;
     padding-bottom: 8px;
 }
 
@@ -147,4 +150,50 @@ body{
     background-repeat: no-repeat;
     background-position: 9px 7px;
     padding-left: 20px;
+}
+
+.inner_div_main{
+    background-color: #475366;
+    width: 90%;
+    height: 280PX;
+    margin: auto;
+    border-radius: 25px;
+}
+.active {
+    border-bottom: 3px solid #9C27B0;
+  }
+
+  .warningIcon {
+    padding: 0px 5px 0px 5px;
+    width: 15px;
+    margin-bottom: -3px;
+}
+
+.warningMsg{
+    padding: 2px 5px;
+    font-size: 14px;
+    margin: 8px;
+  }
+
+.middle_main_screen {
+    padding: 5px 0px;
+}
+
+.inner_top_line{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    clear: both;
+    padding: 0px 10px;
+}
+
+.change_bg_color{
+    padding: 0px 25px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    margin-bottom: 5px;
+    
+    
 }

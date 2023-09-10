@@ -1,49 +1,49 @@
-h2, p{
-    color:white;
-    text-align: right;
-    padding: 5px;
-    line-height: 0.9px;
+h2,
+p {
+  color: white;
+  text-align: right;
+  padding: 5px;
+  line-height: 0.9px;
 }
 
-.TextDI{
-    padding: 10px;
+.TextDI {
+  padding: 10px;
 }
 
-.note{
-    font-weight: 100;
-    font-size: small;
+.note {
+  font-weight: 100;
+  font-size: small;
 }
 
-.note img{
-    padding-left: 5px;
+.note img {
+  padding-left: 5px;
 }
 
-.leftBtn{
-
-    padding: 2px 80px;
-    border-radius: 25px;
-    background-color: transparent;
-    color: white;
-    border: 1px solid white;
+.leftBtn {
+  padding: 5px 80px;
+  border-radius: 25px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
 }
 
-hr{
-    opacity: 80%;
+hr {
+  opacity: 80%;
 }
 
-.pro img{
- width: 60px;
+.pro img {
+  width: 60px;
 }
 
-.pro{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0;
+.pro {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
 }
 
-.newPro{
-    margin-right: -10px;
-    margin-bottom: -5px;
+.newPro {
+  margin-right: -10px;
+  margin-bottom: -5px;
 }

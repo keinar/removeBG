@@ -1,0 +1,14 @@
+.inner_div_main {
+  background-color: #475366;
+  width: 90%;
+  height: 270px;
+  margin: auto;
+  border-radius: 25px;
+}
+
+input.inputColor {
+  position: relative;
+  left: -98px;
+  width: 100px;
+  opacity: 0;
+}

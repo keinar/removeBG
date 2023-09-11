@@ -38,6 +38,8 @@ body {
   background-repeat: no-repeat;
   background-position: 5px 6px;
   background-size: 15px 12px;
+  cursor: pointer;
+  padding-left: 20px;
 }
 
 .bg_div_header_subtext {
@@ -56,8 +58,6 @@ body {
   left: 16px;
   top: 16px;
   width: 15px;
-  background-color: #ffffff;
-  border-radius: 25px;
   padding: 2px;
 }
 
@@ -152,6 +152,7 @@ body {
   background-repeat: no-repeat;
   background-position: 9px 7px;
   padding-left: 20px;
+  cursor: pointer;
 }
 
 .active {
@@ -205,4 +206,8 @@ body {
 
 .button-text {
   margin-left: 10px;
+}
+
+.upload_image_button {
+  display: none;
 }

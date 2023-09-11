@@ -26,10 +26,10 @@ function ImageDisplay(props) {
             <div className="selectColorDiv">
               <button className="change_bg_color" onClick={focusInput}>
                 <span
-                  class="button-circle"
+                  className="button-circle"
                   style={{ backgroundColor: color }}
                 ></span>
-                <span class="button-text">צבע רקע</span>
+                <span className="button-text">צבע רקע</span>
               </button>
               <input
                 type="color"

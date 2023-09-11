@@ -25,6 +25,7 @@ p {
   background-color: transparent;
   color: white;
   border: 1px solid white;
+  cursor: pointer;
 }
 
 hr {
@@ -46,4 +47,31 @@ hr {
 .newPro {
   margin-right: -10px;
   margin-bottom: -5px;
+}
+
+.popup_cont {
+  position: relative;
+  top: -380px;
+  left: -500px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 600px;
+}
+
+.popup_download_content {
+  text-align: center;
+  font-size: 20px;
+}
+.popup_cont h1 {
+  font-size: 45px;
+}
+
+.confirm_popup button {
+  padding: 5px 35px;
+  margin: 15px 5px;
+  border-radius: 25px;
+  font-size: 20px;
+  cursor: pointer;
 }

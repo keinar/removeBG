@@ -3,8 +3,7 @@ import close from "../assets/close.svg";
 import logo from "../assets/logo.png";
 import banner from "../assets/banner.png";
 import DownloadImg from "./DownloadImg";
-import React, { useRef, useState } from "react";
-import Warning from "../assets/warning.svg";
+import React, { useState } from "react";
 import ImageDisplay from "./ImageDisplay";
 
 function RemoveBG() {
@@ -12,11 +11,6 @@ function RemoveBG() {
 
   const setActive = (tabName) => {
     setActiveTab(tabName);
-  };
-
-  const inputElement = useRef();
-  const focusInput = () => {
-    inputElement.current.click();
   };
 
   return (
@@ -56,30 +50,13 @@ function RemoveBG() {
                   מקורי
                 </div>
               </div>
-              <div className="middle_main_screen">
-                <div className="inner_top_line">
-                  <p className="warningMsg">
-                    אל תשכח להוריד את הקבצים שלך. הם ימחקו אוטומטית כשתצא מהדף
-                    <img
-                      className="warningIcon"
-                      src={Warning}
-                      alt="warning"
-                    ></img>
-                  </p>
-                  <div className="selectColorDiv">
-                    <button className="change_bg_color" onClick={focusInput}>
-                      צבע רקע
-                    </button>
-                    <input
-                      type="color"
-                      ref={inputElement}
-                      className="inputColor"
-                    />
-                  </div>
-                </div>
-              </div>
-              <ImageDisplay />
+              {activeTab === "original" ? (
+                <ImageDisplay image_only={true} />
+              ) : (
+                <ImageDisplay image_only={false} />
+              )}
             </div>
+
             <div className="main_left_footer">
               <div className="main_left_footer_text">
                 על ידי העלאת תמונה אתה מסכים לתנאים וההגבלות.

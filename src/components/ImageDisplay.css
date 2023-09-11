@@ -8,7 +8,8 @@
 
 input.inputColor {
   position: relative;
-  left: -98px;
-  width: 100px;
+  left: -112px;
+  top: 3px;
+  width: 90px;
   opacity: 0;
 }

@@ -165,13 +165,13 @@ body {
 }
 
 .warningMsg {
-  padding: 2px 5px;
+  padding: 0px 5px;
   font-size: 14px;
-  margin: 8px;
+  margin: 6px;
 }
 
 .middle_main_screen {
-  padding: 5px 0px;
+  height: 70px;
 }
 
 .inner_top_line {
@@ -183,10 +183,26 @@ body {
 }
 
 .change_bg_color {
-  padding: 5px 25px;
+  padding: 5px 10px 5px 30px;
   background-color: transparent;
   color: white;
   border: 1px solid white;
   border-radius: 25px;
-  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px 0px 0px;
+  cursor: pointer;
+}
+
+.button-circle {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
+  padding-left: 10px;
+}
+
+.button-text {
+  margin-left: 10px;
 }

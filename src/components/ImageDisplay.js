@@ -13,7 +13,6 @@ function ImageDisplay(props) {
   function color_change(e) {
     setColor(e.target.value);
   }
-
   return (
     <div>
       <div className="middle_main_screen">
@@ -43,7 +42,19 @@ function ImageDisplay(props) {
           ""
         )}
       </div>
-      <div className="inner_div_main"></div>;
+      <div className="inner_div_main">
+        {props.upload_image_name &&
+        props.upload_image_name !== "no_bg_false" ? (
+          <img
+            className="uploaded_img"
+            src={"http://localhost:5000/" + props.upload_image_name}
+            alt="Uploaded content"
+          />
+        ) : (
+          "אנא העלה תמונה"
+        )}
+      </div>
+      ;
     </div>
   );
 }

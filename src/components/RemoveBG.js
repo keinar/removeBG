@@ -12,6 +12,7 @@ function RemoveBG() {
   const [activeTab, setActiveTab] = useState("no_bg");
   const [openPopup, setopen_Popup] = useState(false);
   const [showError, setShowEror] = useState(false);
+  const [upload_image_name, setupload_image_name] = useState(false);
   const SUPPORTED_FILE_TYPES = ["image/png", "image/jpeg", "image/jpg"];
   const inputFileElement = useRef();
 
@@ -36,15 +37,15 @@ function RemoveBG() {
     let file = e.target.files[0];
     if (SUPPORTED_FILE_TYPES.includes(file.type)) {
       let formData = new FormData();
-      let headers = { "Content-type": "multipart/form-data" };
-      formData.append("Uploaded", file, headers);
+      // let headers = { "Content-type": "multipart/form-data" };
+      formData.append("UploadedFile", file);
 
       try {
         const res = await axios.post(
           "http://localhost:5000/upload_img",
           formData
         );
-        console.log(res);
+        setupload_image_name(res.data);
       } catch (error) {
         console.log("Error:", error);
         if (error.response) {
@@ -117,10 +118,16 @@ function RemoveBG() {
                   מקורי
                 </div>
               </div>
-              {activeTab === "original" ? (
-                <ImageDisplay image_only={true} />
+              {activeTab === "no_bg" ? (
+                <ImageDisplay
+                  image_only={false}
+                  upload_image_name={"no_bg_" + upload_image_name}
+                />
               ) : (
-                <ImageDisplay image_only={false} />
+                <ImageDisplay
+                  image_only={true}
+                  upload_image_name={upload_image_name}
+                />
               )}
             </div>
 

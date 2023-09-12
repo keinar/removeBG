@@ -1,9 +1,10 @@
 .inner_div_main {
+  position: relative;
   background-color: #475366;
-  width: 90%;
-  height: 270px;
-  margin: auto;
-  border-radius: 25px;
+  height: 285px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 input.inputColor {
@@ -12,4 +13,12 @@ input.inputColor {
   top: 3px;
   width: 90px;
   opacity: 0;
+}
+
+.uploaded_img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }

@@ -7,7 +7,7 @@ app.use(express.static("upload_image"));
 app.use(express.static("img_no_bg"));
 app.use(cors());
 
-app.post("/upload_img", function (req, res) {
+app.post("/upload_image", function (req, res) {
   let time = new Date().getTime();
   let filename = time + "_" + req.files.UploadedFile.name;
   req.files.UploadedFile.mv(`${__dirname}/upload_image/${filename}`, (err) => {
@@ -47,13 +47,15 @@ app.post("/upload_img", function (req, res) {
               response.status,
               response.statusText
             );
+
           (async () => {
             fs.writeFileSync(
               `${__dirname}/img_no_bg/no_bg_${filename}`,
               response.data
             );
           })();
-          res.send(fileName);
+
+          res.send(filename);
         })
         .catch((error) => {
           return console.error("Request failed:", error);

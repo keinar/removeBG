@@ -42,7 +42,7 @@ function RemoveBG() {
 
       try {
         const res = await axios.post(
-          "http://localhost:5000/upload_img",
+          "http://localhost:5000/upload_image",
           formData
         );
         setupload_image_name(res.data);

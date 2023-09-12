@@ -211,3 +211,9 @@ body {
 .upload_image_button {
   display: none;
 }
+.errorMessage {
+  color: red;
+  position: absolute;
+  left: 50px;
+  top: 20px;
+}

@@ -6,11 +6,13 @@ import DownloadImg from "./DownloadImg";
 import React, { useState, useRef } from "react";
 import ImageDisplay from "./ImageDisplay";
 import Popup from "./popup";
+import axios from "axios";
 
 function RemoveBG() {
   const [activeTab, setActiveTab] = useState("no_bg");
   const [openPopup, setopen_Popup] = useState(false);
-
+  const [showError, setShowEror] = useState(false);
+  const SUPPORTED_FILE_TYPES = ["image/png", "image/jpeg", "image/jpg"];
   const inputFileElement = useRef();
 
   const focusInput = () => {
@@ -27,6 +29,39 @@ function RemoveBG() {
 
   function close_popup() {
     setopen_Popup(false);
+  }
+
+  async function send_to_server_request(e) {
+    setShowEror(false); // Clear any previous errors
+    let file = e.target.files[0];
+    if (SUPPORTED_FILE_TYPES.includes(file.type)) {
+      let formData = new FormData();
+      let headers = { "Content-type": "multipart/form-data" };
+      formData.append("Uploaded", file, headers);
+
+      try {
+        const res = await axios.post(
+          "http://localhost:5000/upload_img",
+          formData
+        );
+        console.log(res);
+      } catch (error) {
+        console.log("Error:", error);
+        if (error.response) {
+          // Handle specific error responses from the server
+          console.log("Server responded with status:", error.response.status);
+        } else if (error.request) {
+          // Handle no response from server
+          console.log("No response received:", error.request);
+        } else {
+          // Handle other errors
+          console.log("Error:", error.message);
+        }
+        setShowEror(true);
+      }
+    } else {
+      setShowEror(true);
+    }
   }
 
   const termsContent = `ברוכים הבאים לאפליקציית הסרת רקע מתמונה ("האפליקציה"). השימוש
@@ -52,11 +87,13 @@ function RemoveBG() {
             type="file"
             className="upload_image_button"
             ref={inputFileElement}
+            onChange={send_to_server_request}
           />
           <div className="bg_div_header_subtext">
             {" "}
             png, jpeg :פורמטים נתמכים
           </div>
+          {showError ? <div className="errorMessage">קובץ לא נתמך</div> : ""}
         </div>
 
         <div className="main_cont">
